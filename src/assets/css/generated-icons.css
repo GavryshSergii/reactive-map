@@ -1,0 +1,85 @@
+.cluster {width: 32px;height: 37px;text-align: center;font-size: 10px;color:black;font-weight:600;}
+.cluster p{margin-top: -8px;margin-left: 20px;border-radius: 4px;width: 42px;height: 15px;border: 1px solid white;background-color:tomato;}
+.max p{background-color: rgba(228, 49, 17, 0.9);color: #FFF;border: 2px solid white;margin-top: -14px;width: 27px;height: 20px;padding-top: 7px;padding-bottom: 1px;padding-right: 2px;border-radius: 16px;}
+.middle p { background-color: #ffbf00; color: #a65a00; width: 17px; height: 16px; border-radius: 13px; padding-top: 2px; padding-right: 2px; padding-left: 0px; padding-bottom: 0px; border: 1px solid #a65a00; }
+.min p{background-color: #008000;color: #FFF;width: 14px;height: 15px;border-radius: 12px;padding-right: 2px;padding-top: 1px;}
+.fire{background-image: url(../images/marker/fire.png);top:-32px;}
+.crimescene{background-image: url(../images/marker/crimescene.png);top:-32px;}
+.skull{background-image: url(../images/marker/skull.png);top:-32px;}
+.trup{background-image: url(../images/marker/trup.png);top:-32px;}
+.trup_new{background-image: url(../images/marker/trup_new.png);top:-32px;}
+.gun{background-image: url(../images/marker/gun.png);top:-32px;}
+.shooting{background-image: url(../images/marker/shooting.png);top:-32px;}
+.contract{background-image: url(../images/marker/contract.png);top:-32px;}
+.phones{background-image: url(../images/marker/phones.png);top:-32px;}
+.phones_new{background-image: url(../images/marker/phones_new.png);top:-32px;}
+.bags{background-image: url(../images/marker/bags.png);top:-32px;}
+.revolt{background-image: url(../images/marker/revolt.png);top:-32px;}
+.razboy{background-image: url(../images/marker/razboy.png);top:-32px;}
+.bank{background-image: url(../images/marker/bank.png);top:-32px;}
+.prison{background-image: url(../images/marker/prison.png);top:-32px;}
+.exchange{background-image: url(../images/marker/exchange.png);top:-32px;}
+.wrestling{background-image: url(../images/marker/wrestling.png);top:-32px;}
+.atm{background-image: url(../images/marker/atm.png);top:-32px;}
+.rape{background-image: url(../images/marker/rape.png);top:-32px;}
+.kill{background-image: url(../images/marker/kill.png);top:-32px;}
+.nark{background-image: url(../images/marker/nark.png);top:-32px;}
+.auto{background-image: url(../images/marker/auto.png);top:-32px;}
+.carfire{background-image: url(../images/marker/car-fire.png);top:-32px;}
+.hooligan{background-image: url(../images/marker/hooligan.png);top:-32px;}
+.category{background-image: url(../images/marker/category.png);top:-32px;}
+.gps{background-image: url(../images/marker/car.png);top:-32px;}
+.police-car{background-image: url(../images/marker/police-car-marker.png);top:-32px;}
+.walk{background-image: url(../images/marker/walk_patrol.png);top:-32px;}
+.transparent{display:none; top:-24px; z-index:-9999999 !important}
+.security{background-image: url(../images/marker/security.png);top:-32px;}
+.triolan{background-image: url(../images/marker/cctv.png);top:-32px;}
+.telephone{background-image: url(../images/marker/telephone.png);top:-32px;}
+.convict{background-image: url(../images/marker/razboy_pers.png);top:-32px;}
+.telephone_icon{background-image: url(../images/telephone_icon.png);top:-32px;}
+.telephone_doing_icon{background-image: url(../images/telephone_doing_icon.png);top:-32px;}
+.telephone_done_icon{background-image: url(../images/telephone_done_icon.png);top:-32px;}
+.videocamera{background-image: url(../images/marker/video.png);top:-32px;}
+
+
+.information_icon{background-image: url(../images/icons/information.png);top:-15px;}
+
+/*Иконки для событий из внешних источников (Police.kh.ua)*/
+.avto{background-image: url(../images/icons/car.png);top:-32px;}
+.dancinghall{background-image: url(../images/icons/dancinghall.png);top:-32px;}
+.judo{background-image: url(../images/icons/judo.png);top:-32px;}
+.communitycentre{background-image: url(../images/icons/communitycentre.png);top:-32px;}
+.music_rock{background-image: url(../images/icons/music_rock.png);top:-32px;}
+.amphitheater{background-image: url(../images/icons/amphitheater.png);top:-32px;}
+.lockerrental{background-image: url(../images/icons/lockerrental.png);top:-32px;}
+.jeep{background-image: url(../images/icons/jeep.png);top:-32px;}
+.bar{background-image: url(../images/icons/bar.png);top:-32px;}
+.fireworks{background-image: url(../images/icons/fireworks.png);top:-32px;}
+.strike{background-image: url(../images/icons/strike.png);top:-32px;}
+.landfill{background-image: url(../images/icons/landfill.png);top:-32px;}
+.customs{background-image: url(../images/icons/customs.png);top:-32px;}
+.drugstore{background-image: url(../images/icons/drugstore.png);top:-32px;}
+.restaurant_greek{background-image: url(../images/icons/restaurant_greek.png);top:-32px;}
+
+/*Иконка маркера координат*/
+.civil_position{background-image: url(../images/marker-icon.png);top:-32px;}
+
+.manual_marker_icon{background-image: url(../images/marker/eoicon.png);top:-32px;-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; cursor: move;}
+.address_marker_icon{background-image: url(../images/marker/eoplunder.png);top:-32px;-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; cursor: move;}
+
+.convict{background-image: url(../images/marker/razboy_pers.png);top:-32px;}
+.district_area {
+    pointer-events:none;
+}
+.radius_no_click {
+    pointer-events:none;
+}
+/*.common-style {
+	margin-top: 0px !important;
+}*/

@@ -1,0 +1,1 @@
+export const updateCentreZoomMap = (viewport) => ({type: 'UPDATE_CENTRE_ZOOM', payload: viewport});
