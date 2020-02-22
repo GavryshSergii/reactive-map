@@ -14,12 +14,18 @@ import {Marker, Popup} from 'react-leaflet';
 
 class AppMarker extends React.Component {
     render() {
+        let event_type;
         console.log(this.props.marker.id);
+        if (this.props.marker.online !== undefined) {
+            event_type = (this.props.marker.online === 1) ? 1000 : 1111;
+        } else {
+            event_type = this.props.marker.event_type_id;
+        }
 
         return (
         <Marker
             position={[this.props.marker.lat, this.props.marker.lng]}
-            icon={getIcons(this.props.marker.event_type_id)}
+            icon={getIcons(event_type)}
         >
             <Popup><span>{this.props.marker.description}</span></Popup>
         </Marker>)
