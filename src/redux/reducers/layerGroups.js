@@ -13,7 +13,7 @@ export default function layerGroups(state = initialState, action) {
         case 'LOAD_DATA_SUCCESS':
             const nameLayer = action.payload.name;
             const newDataLayer = {};
-            newLayer[nameLayer] = action.payload;
+            newDataLayer[nameLayer] = action.payload;
             return {...state, ...newDataLayer };
         case 'CLEAR_LAYER_GROUPS':
             return initialState;
