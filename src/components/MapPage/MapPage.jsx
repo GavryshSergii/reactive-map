@@ -3,8 +3,6 @@ import './MapPage.css';
 import ElementsMap from './ElementsMap';
 import 'leaflet/dist/leaflet.css';
 import {connect} from 'react-redux';
-
-
 import {Map, TileLayer, ZoomControl} from 'react-leaflet';
 import {updateCentreZoomMap} from "../../redux/actions/settingMap";
 

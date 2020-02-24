@@ -7,7 +7,7 @@ import 'react-leaflet-markercluster/dist/styles.min.css';
 
 class AppLayerGroupe extends React.Component {
     render() {
-        console.log(this.props.layerGroup);
+        // console.log(this.props.layerGroup);
         // if (this.props.layerGroup.isCluster === true) {
         //   return (<LayerGroup>
         //     <MarkerClusterGroup>

@@ -7,50 +7,15 @@ export const actionTypes = {
     LOAD_DATA_SUCCESS: 'LOAD_DATA_SUCCESS',
 };
 
-export const failure = (error) => ({ type: actionTypes.FAILURE, error,});
+export const failure = (error) => ({ type: actionTypes.FAILURE, error});
 
-export const loadDataSuccess = (data) => ({ type: actionTypes.LOAD_DATA_SUCCESS, data, });
+export const loadDataSuccess = (payload) => ({ type: actionTypes.LOAD_DATA_SUCCESS, payload });
 
 export const loadData = () => ({ type: actionTypes.LOAD_DATA });
-
-
-const myInit = {
-    method: 'POST',
-    headers: {
-        'Origin': 'http://localhost:3000',
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-    },
-    mode: 'cors',
-};
 
 export const getLayerGroups1 = () => ({type: 'ADD_LAYER_GROUPS', payload: mockApiData_1});
 export const getLayerGroups2 = () => ({type: 'ADD_LAYER_GROUPS', payload: mockApiData_2});
 export const getLayerGroups3 = () => ({type: 'ADD_LAYER_GROUPS', payload: mockApiData_3});
-
-export const getCivilEventsLayer = () => dispatch => {
-
-    myInit.body = JSON.stringify({event_date_start: "2018-04-01", event_date_end:"2019-04-13"});
-    return fetch('http://127.0.0.1:8000/api/civil_events/events', myInit)
-        .then(res => res.json())
-        .then(
-            data => {
-                if (data.exception){
-                    dispatch({type: 'ERR_LAYER_GROUPS', payload: data});
-                    return;
-                }
-                const civil_events = {
-                    id: 3,
-                    name: 'civil_events',
-                    markers: data.reduce((obj, cur) =>{ return {...obj, [cur.id]: cur};},{}) //array to object
-                                                                                             //index = marker.id
-                };
-                dispatch({type: 'ADD_LAYER_GROUPS', payload: civil_events});
-            },
-            err => dispatch({type: 'ERR_LAYER_GROUPS', payload: err})
-        )
-};
-
 
 const mockApiData_1 = {
     id: 1,
