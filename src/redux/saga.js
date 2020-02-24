@@ -1,13 +1,11 @@
-require('es6-promise').polyfill();
-import fetchJsonp from 'fetch-jsonp';
-
 import { call, delay, put } from 'redux-saga/effects';
 import { failure, loadDataSuccess } from './actions/layerGroups';
 
 function* loadDataSaga() {
   try{
-    // const res = yield fetch('http://101.22.6.17/ajax.php');
-    const res = yield fetchJsonp('http://101.22.6.17/ajax.php');
+    const res = yield fetch('http://101.22.6.17/ajax.php');
+    // const res = yield fetch('localhost/bank/ajax.php');
+
     const data = yield res.json();
     const layer = {
       id: 1,
