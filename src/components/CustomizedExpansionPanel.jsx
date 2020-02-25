@@ -21,13 +21,14 @@ const CustomizedExpansionPanel = ({
                                     layers,
                                   }) => {
   const classes = useStyles();
-  let filteredMarkers;
+  let filteredMarkers = [];
   Object.values(layers).forEach((element) => {
     if (element.name === 'TRACKING') {
        filteredMarkers = Object.values(element.markers)
                                .filter((item) => ((item.online === '0')^statusOnline))
     }
   });
+
   // console.log(filteredMarkers);
 
   return (

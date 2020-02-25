@@ -15,9 +15,6 @@ L.Icon.Default.mergeOptions({
 
 class AppMarker extends React.Component {
   render() {
-    console.log(this.props.openPopup);
-    console.log(this.props.marker.id);
-
     if (Number(this.props.marker.id) === Number(this.props.openPopup)) {
       return (
         <OpenPopupMarker
