@@ -10,9 +10,6 @@ import { connect } from 'react-redux';
 import ProductInLine from './ProductInLine';
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    width: '100%',
-  },
   heading: {
     fontSize: theme.typography.pxToRem(15),
     fontWeight: theme.typography.fontWeightRegular,
@@ -20,36 +17,38 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const CustomizedExpansionPanel = ({
-  layers,
-}) => {
-    const classes = useStyles();
+                                    statusOnline,
+                                    layers,
+                                  }) => {
+  const classes = useStyles();
+  let filteredMarkers;
+  Object.values(layers).forEach((element) => {
+    if (element.name === 'TRACKING') {
+       filteredMarkers = Object.values(element.markers)
+                               .filter((item) => ((item.online === '0')^statusOnline))
+    }
+  });
+  // console.log(filteredMarkers);
 
-    return (
-      <div className={classes.root}>
-        <ExpansionPanel>
-          <ExpansionPanelSummary
-            expandIcon={<ExpandMoreIcon/>}
-            id='offline-panel-header'
-          >
-            <Typography className={classes.heading}>Offline</Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
-        {}
-        <ExpansionPanel>
-          <ExpansionPanelSummary
-            expandIcon={<ExpandMoreIcon/>}
-            id='online-panel-header'
-          >
-            <Typography className={classes.heading}>Online</Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
-      </div>
-    );
+  return (
+    <ExpansionPanel defaultExpanded={true}>
+      <ExpansionPanelSummary
+        expandIcon={<ExpandMoreIcon/>}
+        id={(statusOnline) ? 'online-panel-header' : 'offline-panel-header'}
+      >
+        <Typography className={classes.heading}>
+          {(statusOnline) ? 'Online' : 'Offline'}
+        </Typography>
+      </ExpansionPanelSummary>
+      <ExpansionPanelDetails style={{'display': 'block'}}>
+        {
+          filteredMarkers.map((element) => (
+            <ProductInLine key={element.id + element.ip} layer='TRACKING' element={element}/>)
+          )
+        }
+      </ExpansionPanelDetails>
+    </ExpansionPanel>
+  );
 };
 
 export default connect(

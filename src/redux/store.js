@@ -4,11 +4,11 @@ import rootReducer from './reducers'
 import rootSaga from './saga'
 
 const bindMiddleware = middleware => {
-  if (process.env.NODE_ENV !== 'production') {
+  // if (process.env.NODE_ENV !== 'production') {
     const { composeWithDevTools } = require('redux-devtools-extension');
     return composeWithDevTools(applyMiddleware(...middleware))
-  }
-  return applyMiddleware(...middleware)
+  // }
+  // return applyMiddleware(...middleware)
 };
 
 const initStore = () => {
@@ -20,7 +20,7 @@ const initStore = () => {
 
   store.sagaTask = sagaMiddleware.run(rootSaga);
 
-  console.log(store);
+  // console.log(store);
   return store;
 };
 

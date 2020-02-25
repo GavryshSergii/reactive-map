@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import './App.css';
 
 import MapPage from '../MapPage';
-import CustomizedExpansionPanel from '../CustomizedExpansionPanel';
+import PanelStatus from '../PanelStatus';
 
 import { getLayerGroups1, getLayerGroups2 } from '../../redux/actions/layerGroups';
 
@@ -12,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <div className="app-root">
-        <CustomizedExpansionPanel/>
+        <PanelStatus/>
         <MapPage/>
       </div>
     );

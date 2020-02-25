@@ -1,7 +1,7 @@
 // import fetchJsonp from 'fetch-jsonp';
 
 import { call, delay, put } from 'redux-saga/effects';
-import { failure, loadDataSuccess } from './actions/layerGroups';
+import { failure, loadDataSuccess, focusMarker } from './actions/layerGroups';
 
 import staticData from '../data.json';
 import staticDataBlast from '../dataBlast.json';
@@ -12,7 +12,7 @@ function* loadDataSaga() {
   try{
     const res = yield fetch('http://101.22.6.17/ajax.php');
     // const res = yield fetch('https://jsonplaceholder.typicode.com/users');
-    let data = yield res.json();
+    const data = yield res.json();
     const layer = {
       id: 1,
       name: 'TRACKING',
@@ -31,9 +31,21 @@ export function* loadDataSagaTest(data) {
       id: 1,
       name: 'TRACKING',
       markers: data.reduce((obj, cur) => {
-        return { ...obj, [cur.id]: cur };
+        console.log('cur');
+        console.log(cur);
+        console.log('obj');
+        console.log(obj);
+        const marker = {
+          ...cur,
+          description: `адреса: ${cur.address} ip: ${cur.ip}`,
+          event_type_id: (cur.online === '1') ? 1111 : 1000,
+        };
+
+        return {...obj, [cur.id]: marker};
       }, {})
     };
+    console.log('layer');
+    console.log(layer);
     yield put(loadDataSuccess(layer));
   } catch (err) {
     console.log(err);
@@ -46,10 +58,16 @@ export function* sagaTest() {
   yield call(loadDataSagaTest, staticDataBlast);
 }
 
+export function* onFocusMarker (data){
+  console.log(1);
+  console.log(data);
+  yield put(focusMarker(data));
+}
+
 function* rootSaga() {
   while (true) {
-    yield call(loadDataSaga);
-    // yield call(sagaTest);
+    // yield call(loadDataSaga);
+    yield call(sagaTest);
     yield delay(5000);
   }
 }

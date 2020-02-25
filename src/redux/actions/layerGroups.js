@@ -5,11 +5,16 @@ export const actionTypes = {
     FAILURE: 'FAILURE',
     LOAD_DATA: 'LOAD_DATA',
     LOAD_DATA_SUCCESS: 'LOAD_DATA_SUCCESS',
+    FOCUS_MARKER: 'FOCUS_MARKER',
 };
 
 export const failure = (error) => ({ type: actionTypes.FAILURE, error});
 
 export const loadDataSuccess = (payload) => ({ type: actionTypes.LOAD_DATA_SUCCESS, payload });
+
+export const focusMarker = (id, layer) => {
+    return ({type: actionTypes.FOCUS_MARKER, data: {id, layer}})
+};
 
 export const loadData = () => ({ type: actionTypes.LOAD_DATA });
 
