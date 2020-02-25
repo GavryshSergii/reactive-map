@@ -10,7 +10,7 @@ require('es6-promise').polyfill();
 
 function* loadDataSaga() {
   try{
-    const res = yield fetch('http://101.22.6.17/ajax.php');
+    const res = yield fetch('http://localhost/ajax.php');
     // const res = yield fetch('https://jsonplaceholder.typicode.com/users');
     const data = yield res.json();
     const layer = {
